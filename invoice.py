@@ -24,4 +24,12 @@ add_button = Button(root, text="Add Medicine")
 add_button.pack()
 
 
+# Invoice Total
+total_amount_label = Label(root, text="Total Amount: ")
+total_amount_label.pack()
+
+total_amount_entry = Entry(root)
+total_amount_entry.pack()
+
+
 root.mainloop()
