@@ -32,4 +32,12 @@ total_amount_entry = Entry(root)
 total_amount_entry.pack()
 
 
+# Customer
+customer_label = Label(root, text="Customer Name: ")
+customer_label.pack()
+
+customer_entry = Entry(root)
+customer_entry.pack()
+
+
 root.mainloop()
