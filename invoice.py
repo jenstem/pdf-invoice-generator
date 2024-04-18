@@ -6,10 +6,10 @@ root.title("Invoice Generator")
 
 # Medicine List
 medicines = {
-    "Medicine A": 10,
-    "Medicine B": 20,
-    "Medicine C": 30,
-    "Medicine D": 40,
+    "Medicine A": 10.00,
+    "Medicine B": 20.00,
+    "Medicine C": 30.00,
+    "Medicine D": 40.00,
 }
 
 
@@ -22,14 +22,16 @@ def add_medicine():
     selected_medicine = medicine_listbox.get(ANCHOR)
     quantity = int(quantity_entry.get())
     price = medicines[selected_medicine]
-    item_total = quantity * price
+    item_total = price * quantity
     invoice_items.append((selected_medicine, quantity, item_total))
+    total_amount_entry.delete(0, END)
+    total_amount_entry.insert(END, str(calculate_total()))
     update_invoice_text()
 
 
 # Function to calculate the total amount
 def calculate_total():
-    total_amount = 0
+    total = 0.00
     for item in invoice_items:
         total = total + item[2]
     return total
