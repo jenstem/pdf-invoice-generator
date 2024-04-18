@@ -27,6 +27,14 @@ def add_medicine():
     update_invoice_text()
 
 
+# Function to calculate the total amount
+def calculate_total():
+    total_amount = 0
+    for item in invoice_items:
+        total = total + item[2]
+    return total
+
+
 # Function to update the invoice text
 def update_invoice_text():
     invoice_text.delete(1.0, END)
