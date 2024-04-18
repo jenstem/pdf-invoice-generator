@@ -19,7 +19,7 @@ quantity_entry = Entry(root)
 quantity_entry.pack()
 
 
-# Button
+# Button to add medicine
 add_button = Button(root, text="Add Medicine")
 add_button.pack()
 
@@ -38,6 +38,11 @@ customer_label.pack()
 
 customer_entry = Entry(root)
 customer_entry.pack()
+
+
+# Button to generate invoice
+generate_button = Button(root, text="Generate Invoice")
+generate_button.pack()
 
 
 root.mainloop()
