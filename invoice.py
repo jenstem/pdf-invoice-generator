@@ -13,6 +13,18 @@ medicines = {
 }
 
 
+# Shopping cart
+invoice_items = []
+
+
+def add_medicine():
+    selected_medicine = medicine_listbox.get(ANCHOR)
+    quantity = int(quantity_entry.get())
+    price = medicines[selected_medicine]
+    item_total = quantity * price
+    invoice_items.append((selected_medicine, quantity, item_total))
+
+
 # Medicine
 medicine_label = Label(root, text="Medicine: ")
 medicine_label.pack()
@@ -31,7 +43,7 @@ quantity_entry.pack()
 
 
 # Button to add medicine
-add_button = Button(root, text="Add Medicine")
+add_button = Button(root, text="Add Medicine", command=add_medicine)
 add_button.pack()
 
 
