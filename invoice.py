@@ -18,6 +18,8 @@ medicine_label = Label(root, text="Medicine: ")
 medicine_label.pack()
 
 medicine_listbox = Listbox(root, selectmode=SINGLE)
+for medicine in medicines:
+    medicine_listbox.insert(END, medicine)
 medicine_listbox.pack()
 
 
