@@ -4,6 +4,15 @@ root = Tk()
 root.title("Invoice Generator")
 
 
+# Medicine List
+medicines = {
+    "Medicine A": 10,
+    "Medicine B": 20,
+    "Medicine C": 30,
+    "Medicine D": 40,
+}
+
+
 # Medicine
 medicine_label = Label(root, text="Medicine: ")
 medicine_label.pack()
@@ -43,6 +52,11 @@ customer_entry.pack()
 # Button to generate invoice
 generate_button = Button(root, text="Generate Invoice")
 generate_button.pack()
+
+
+# Invoice Text
+invoice_text = Text(root, height=10, width=50)
+invoice_text.pack()
 
 
 root.mainloop()
