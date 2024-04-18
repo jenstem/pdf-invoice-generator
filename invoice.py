@@ -17,12 +17,21 @@ medicines = {
 invoice_items = []
 
 
+# Function to add medicine to the invoice
 def add_medicine():
     selected_medicine = medicine_listbox.get(ANCHOR)
     quantity = int(quantity_entry.get())
     price = medicines[selected_medicine]
     item_total = quantity * price
     invoice_items.append((selected_medicine, quantity, item_total))
+    update_invoice_text()
+
+
+# Function to update the invoice text
+def update_invoice_text():
+    invoice_text.delete(1.0, END)
+    for item in invoice_items:
+        invoice_text.insert(END, f"Medicine: {item[0]}, Quantity: {item[1]}, Total: {item[2]}\n")
 
 
 # Medicine
